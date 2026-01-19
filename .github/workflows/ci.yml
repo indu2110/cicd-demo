@@ -1,0 +1,21 @@
+name: Simple CI
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Run a basic command
+        run: echo "CI pipeline running successfully"
+
+      - name: Simulate a test
+        run: |
+          echo "Running tests"
+          exit 0
